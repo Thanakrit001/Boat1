@@ -1,0 +1,39 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "UNI X HUB", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Tab = Window:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Section = Tab:AddSection({
+    Name = "AutoFarm"
+})
+
+local autoFarmToggle = Tab:AddToggle({
+    Name = "AutoFarm Gold + Gold Block",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            while true do
+                game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-51.5656433, 65.0000458, 1369.09009))
+                wait(1)
+                
+                local TweenService = game:GetService("TweenService")
+                local targetCFrame = CFrame.new(Vector3.new(-51.5656433, 65.0000458, 7529.08984))
+                
+                local tweenInfo = TweenInfo.new(15, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0)
+
+                local goal = {}
+                goal.CFrame = targetCFrame
+
+                local humanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+                local tween = TweenService:Create(humanoidRootPart, tweenInfo, goal)
+                tween:Play()
+                
+                wait(16)
+                game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-55.7065125, -358.739624, 9492.35645))
+                wait(18)
+            end
+        end
+    end
+})
