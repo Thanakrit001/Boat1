@@ -13,8 +13,8 @@ local autoFarmToggle = Tab:AddToggle({
     Name = "AutoFarm Gold + Gold Block",
     Default = false,
     Callback = function(Value)
-        if Value then
-            while true do
+        local autofarm = Value 
+            while autofarm do
                 game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-51.5656433, 65.0000458, 1369.09009))
                 wait(1)
                 
@@ -32,8 +32,9 @@ local autoFarmToggle = Tab:AddToggle({
                 
                 wait(16)
                 game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-55.7065125, -358.739624, 9492.35645))
-                wait(25)
+                wait(18)
+                autofarmEnabled = Value 
             end
         end
-    end
 })
+
